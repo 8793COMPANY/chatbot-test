@@ -1,38 +1,164 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Apple SD Gothic Neo', sans-serif;
+  background-color: #f5f5f5;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.chat-wrapper {
+  max-width: 600px;
+  margin: 40px auto;
   display: flex;
   flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  height: 90vh;
+}
+
+.chat-header {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 16px 20px;
+  background-color: #fff4f3;
+  border-bottom: 1px solid #eee;
+}
+
+.bot-profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.bot-info {
+  margin-left: 12px;
+}
+
+.bot-name {
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+}
+
+.bot-status {
+  font-size: 12px;
+  color: #888;
+}
+
+.chat-box {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bubble-row {
+  display: flex;
+  align-items: flex-end;
+}
+
+.bubble-row.user {
+  justify-content: flex-end;
+}
+
+.bubble-row.bot {
+  justify-content: flex-start;
+}
+
+.bubble-profile {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.bubble {
+  padding: 12px 16px;
+  border-radius: 20px;
+  display: inline-block;
+  max-width: 80%;
+  word-wrap: break-word;
+  font-size: 15px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.bubble.user {
+  background-color: #ff914d;
+  color: #fff;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+  margin-left: auto;
+}
+
+.bubble.bot {
+  background-color: #f1f1f1;
+  color: #333;
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+  margin-right: auto;
+}
+
+.input-row {
+  display: flex;
+  padding: 12px 16px;
+  border-top: 1px solid #eee;
+}
+
+.input-row input {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+}
+
+.input-row button {
+  margin-left: 10px;
+  background-color: #ff914d;
   color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+.input-row button:hover {
+  background-color: #ff7b2d;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.date-separator {
+  text-align: center;
+  font-size: 13px;
+  color: #888;
+  margin: 20px auto 10px;
+  padding: 4px 12px;
+  background: #f2f2f2;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.timestamp {
+  font-size: 12px;
+  color: #999;
+  margin-top: 4px;
+  padding: 0 6px;
+  text-align: right;
+}
+
+.bubble-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 80%;
+}
+
+.bubble-row.user .bubble-group {
+  align-items: flex-end;
 }
